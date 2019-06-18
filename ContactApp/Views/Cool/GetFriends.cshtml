@@ -1,0 +1,15 @@
+﻿@model ContactApp.Models.ContactViewModel
+@{
+    ViewData["Title"] = "GetFriends";
+}
+
+<h2>GetFriends</h2>
+
+@{ 
+    var bestFriends = Model.contactsList.Where(x => x.IsCloseFriend == true).ToList();
+
+    foreach(var item in bestFriends)
+    {
+        <li> @item.FirstName , @item.LastName , Phonenumber:@item.PhoneNumber</li>
+    }
+}

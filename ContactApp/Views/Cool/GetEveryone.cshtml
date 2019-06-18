@@ -1,0 +1,13 @@
+﻿@model ContactApp.Models.ContactViewModel
+@{
+    ViewData["Title"] = "GetEveryone";
+}
+
+<h2>GetEveryone</h2>
+
+@{ 
+    foreach(var item in Model.contactsList)
+    {
+        <li>@item.FirstName , @item.LastName Phonenumber: @item.PhoneNumber</li>
+    }
+}
